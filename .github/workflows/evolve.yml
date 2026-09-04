@@ -1,0 +1,76 @@
+name: Evolve Shogi Individuals
+
+on:
+  workflow_dispatch:
+    inputs:
+      generations:
+        description: "何世代分進めるか"
+        required: false
+        default: "3"
+      games_vs_yaneuraou:
+        description: "1世代あたり、個体ごとのやねうら王との対局数"
+        required: false
+        default: "1"
+      games_vs_peers:
+        description: "1世代あたりの個体同士の対局数"
+        required: false
+        default: "2"
+
+jobs:
+  evolve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Cache YaneuraOu build
+        id: cache-yaneuraou
+        uses: actions/cache@v4
+        with:
+          path: /tmp/YaneuraOu
+          key: yaneuraou-material-${{ runner.os }}-v1
+
+      - name: Build YaneuraOu (MATERIAL edition)
+        run: bash scripts/build_yaneuraou.sh /tmp/YaneuraOu
+
+      - name: Run evolution
+        run: |
+          python run_evolution.py \
+            --engine-path /tmp/YaneuraOu/source/YaneuraOu-by-gcc \
+            --data-dir data \
+            --generations ${{ github.event.inputs.generations }} \
+            --games-vs-yaneuraou ${{ github.event.inputs.games_vs_yaneuraou }} \
+            --games-vs-peers ${{ github.event.inputs.games_vs_peers }}
+
+      - name: Commit results back to repository
+        run: |
+          git config user.name "shogi-sim-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/individuals.json data/matches.json
+          git diff --staged --quiet || git commit -m "Evolve: add generation results [skip ci]"
+          git push
+
+      - name: Deploy to Xserver
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.XSERVER_HOST }}
+          username: ${{ secrets.XSERVER_USER }}
+          password: ${{ secrets.XSERVER_SSH_PASSWORD }}
+          port: ${{ secrets.XSERVER_SSH_PORT }}
+          source: "data/individuals.json,data/matches.json"
+          target: ${{ secrets.XSERVER_TARGET_DIR }}
+          strip_components: 1
+
+      - name: Trigger import on Xserver
+        run: |
+          curl -sS "https://lab.spia-net.com/shogi2/import_from_colab.php?key=${{ secrets.IMPORT_SECRET_KEY }}"
