@@ -84,4 +84,4 @@ jobs:
 
       - name: Trigger import on Xserver
         run: |
-          curl -sS "https://lab.spia-net.com/shogi2/import_from_colab.php?key=${{ secrets.IMPORT_SECRET_KEY }}"
+          curl -sS -f "https://lab.spia-net.com/shogi2/import_from_colab.php?key=${{ secrets.IMPORT_SECRET_KEY }}" || (echo "::error::Xserverへのインポートに失敗しました" && exit 1)
