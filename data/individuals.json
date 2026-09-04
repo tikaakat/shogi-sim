@@ -355,7 +355,7 @@
       "king_safety_weight": 17.206805072178497,
       "aggression_weight": 0.29292923203335164
     },
-    "elo": 2045.878444284482,
+    "elo": 2083.8875532009047,
     "match_history": [
       {
         "opponent": "yaneuraou",
@@ -481,6 +481,16 @@
         "opponent": "G21-8BAD",
         "result": "win",
         "generation": 22
+      },
+      {
+        "opponent": "yaneuraou",
+        "result": "win",
+        "generation": 24
+      },
+      {
+        "opponent": "gen9_auto_0_1788533590",
+        "result": "win",
+        "generation": 24
       }
     ]
   },
@@ -770,7 +780,7 @@
       "king_safety_weight": 17.206805072178497,
       "aggression_weight": 0.29292923203335164
     },
-    "elo": 2031.0532350878216,
+    "elo": 2023.2709952931264,
     "match_history": [
       {
         "opponent": "yaneuraou",
@@ -851,6 +861,21 @@
         "opponent": "gen15_auto_0_1788536602",
         "result": "win",
         "generation": 22
+      },
+      {
+        "opponent": "yaneuraou",
+        "result": "win",
+        "generation": 24
+      },
+      {
+        "opponent": "gen2_auto_0_1788516709",
+        "result": "loss",
+        "generation": 24
+      },
+      {
+        "opponent": "G19-2357",
+        "result": "loss",
+        "generation": 24
       }
     ]
   },
@@ -1215,7 +1240,7 @@
       "king_safety_weight": 18.71689657822623,
       "aggression_weight": 0.2728544368228656
     },
-    "elo": 2022.8155259183504,
+    "elo": 2061.993444363326,
     "match_history": [
       {
         "opponent": "yaneuraou",
@@ -1231,6 +1256,16 @@
         "opponent": "yaneuraou",
         "result": "win",
         "generation": 22
+      },
+      {
+        "opponent": "yaneuraou",
+        "result": "win",
+        "generation": 24
+      },
+      {
+        "opponent": "gen9_auto_0_1788533590",
+        "result": "win",
+        "generation": 24
       }
     ]
   },
@@ -1260,7 +1295,7 @@
       "king_safety_weight": 17.206805072178497,
       "aggression_weight": 0.29292923203335164
     },
-    "elo": 2008.028337895928,
+    "elo": 2032.0670677393045,
     "match_history": [
       {
         "opponent": "yaneuraou",
@@ -1271,6 +1306,11 @@
         "opponent": "gen2_auto_0_1788516709",
         "result": "loss",
         "generation": 22
+      },
+      {
+        "opponent": "yaneuraou",
+        "result": "win",
+        "generation": 24
       }
     ]
   },
@@ -1300,7 +1340,42 @@
       "king_safety_weight": 18.71689657822623,
       "aggression_weight": 0.2728544368228656
     },
-    "elo": 2034.346985101416,
+    "elo": 2057.445661979356,
+    "match_history": [
+      {
+        "opponent": "yaneuraou",
+        "result": "win",
+        "generation": 24
+      }
+    ]
+  },
+  {
+    "id": "G25-9A24",
+    "generation": 25,
+    "parent_a_id": "G23-687",
+    "parent_b_id": "gen2_auto_0_1788516709",
+    "params": {
+      "piece_values": {
+        "P": 93.42986018731413,
+        "L": 414.95806280826804,
+        "N": 398.81745189820106,
+        "S": 557.7265016268642,
+        "G": 719.8697018400403,
+        "B": 883.4296499788952,
+        "R": 923.8700068179226,
+        "K": 13600.631147562393,
+        "+P": 509.2618051484683,
+        "+L": 662.8971556884186,
+        "+N": 552.8786525549427,
+        "+S": 703.3780356956654,
+        "+B": 1007.0295593362721,
+        "+R": 1165.7355088428262
+      },
+      "mobility_weight": 2.0364934814731237,
+      "king_safety_weight": 18.71689657822623,
+      "aggression_weight": 0.2728544368228656
+    },
+    "elo": 2070.6666075901303,
     "match_history": []
   }
 ]
