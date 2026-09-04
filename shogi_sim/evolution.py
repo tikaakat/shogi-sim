@@ -39,7 +39,7 @@ def auto_breed(population, generation, num_children=1, top_n=3):
     children = []
     for i in range(num_children):
         parent_a, parent_b = random.sample(ranked, 2)
-        new_id = f"gen{generation}_auto_{i}_{int(time.time())}"
+        new_id = f"G{generation}-{format(random.randint(0, 46655), 'x').upper()}"
         children.append(crossover(parent_a, parent_b, new_id, generation))
     return children
 
@@ -47,7 +47,7 @@ def auto_breed(population, generation, num_children=1, top_n=3):
 def manual_breed(population_by_id, parent_a_id, parent_b_id, generation):
     parent_a = population_by_id[parent_a_id]
     parent_b = population_by_id[parent_b_id]
-    new_id = f"gen{generation}_manual_{int(time.time())}"
+    new_id = f"G{generation}-{format(random.randint(0, 46655), 'x').upper()}m"
     return crossover(parent_a, parent_b, new_id, generation)
 
 
