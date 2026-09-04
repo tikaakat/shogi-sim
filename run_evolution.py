@@ -28,7 +28,7 @@ def main():
         matches_log = []
         population = []
         for i in range(args.init_population):
-            ind = Individual(ind_id=f"gen0_{i}", generation=0)
+            ind = Individual(ind_id=f"G0-{i:03d}", generation=0)
             population.append(ind)
             all_individuals[ind.id] = ind
         start_gen = 0
