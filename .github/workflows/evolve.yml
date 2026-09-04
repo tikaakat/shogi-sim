@@ -45,7 +45,7 @@ jobs:
 
       - name: Run evolution
         run: |
-          python run_evolution.py \
+          python -u run_evolution.py \
             --engine-path /tmp/YaneuraOu/source/YaneuraOu-by-gcc \
             --data-dir data \
             --generations ${{ github.event.inputs.generations }} \
@@ -65,7 +65,7 @@ jobs:
         with:
           host: ${{ secrets.XSERVER_HOST }}
           username: ${{ secrets.XSERVER_USER }}
-          password: ${{ secrets.XSERVER_SSH_PASSWORD }}
+          key: ${{ secrets.XSERVER_SSH_KEY }}
           port: ${{ secrets.XSERVER_SSH_PORT }}
           source: "data/individuals.json,data/matches.json"
           target: ${{ secrets.XSERVER_TARGET_DIR }}
