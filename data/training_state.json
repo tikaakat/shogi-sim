@@ -1,5 +1,5 @@
 {
-  "opponent_think_ms": 180,
+  "opponent_think_ms": 230,
   "win_rate_history": [
     {
       "generation": 0,
@@ -30,6 +30,29 @@
       "generation": 10,
       "win_rate": 1.0,
       "opponent_think_ms": 130
+    },
+    {
+      "generation": 12,
+      "win_rate": 0.8,
+      "opponent_think_ms": 180
     }
+  ],
+  "active_population_ids": [
+    "G11-87FA",
+    "G9-A853",
+    "G3-9146",
+    "G9-87CF",
+    "G9-9D85",
+    "G7-48F4",
+    "G7-8A6",
+    "G9-8B56",
+    "G13-A43i",
+    "G13-1A23i",
+    "G13-9C18",
+    "G13-A5D2",
+    "G13-8EF8",
+    "G13-3A19",
+    "G13-166C",
+    "G13-9A76"
   ]
 }
