@@ -1,5 +1,5 @@
 {
-  "opponent_think_ms": 230,
+  "opponent_think_ms": 180,
   "win_rate_history": [
     {
       "generation": 0,
@@ -35,7 +35,12 @@
       "generation": 12,
       "win_rate": 0.533,
       "opponent_think_ms": 230
+    },
+    {
+      "generation": 14,
+      "win_rate": 0.233,
+      "opponent_think_ms": 230
     }
   ],
-  "yaneuraou_elo": 1604.7255405459168
+  "yaneuraou_elo": 1745.065974731797
 }
