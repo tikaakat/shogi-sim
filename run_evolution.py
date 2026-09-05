@@ -43,6 +43,8 @@ def main():
     # 相手の思考時間：保存済みの値があればそれを使う。無ければCLI引数の初期値
     opponent_think_ms = training_state.get("opponent_think_ms") or args.opponent_think_ms
     win_rate_history = training_state.get("win_rate_history", [])
+    # ベンチマーク（やねうら王）側のレートも、固定せず通常のEloと同様に更新していく
+    yaneuraou_elo = training_state.get("yaneuraou_elo") or 2200.0
 
     if all_individuals is None:
         random.seed()
@@ -60,8 +62,8 @@ def main():
         start_gen = max(ind.generation for ind in all_individuals.values()) + 1
 
     for gen in range(start_gen, start_gen + args.generations):
-        print(f"=== Generation {gen} (opponent_think_ms={opponent_think_ms}) ===")
-        population = run_generation(
+        print(f"=== Generation {gen} (opponent_think_ms={opponent_think_ms}, yaneuraou_elo={yaneuraou_elo:.1f}) ===")
+        population, yaneuraou_elo = run_generation(
             population, gen, matches_log,
             engine_path=args.engine_path, eval_dir=args.eval_dir,
             games_vs_yaneuraou=args.games_vs_yaneuraou,
@@ -69,10 +71,12 @@ def main():
             individual_think_ms=args.individual_think_ms,
             opponent_think_ms=opponent_think_ms,
             multipv=args.multipv,
+            yaneuraou_elo=yaneuraou_elo,
         )
         for ind in population:
             all_individuals[ind.id] = ind
             print(f"  {ind.id}: Elo={ind.elo:.1f}")
+        print(f"  (やねうら王ベンチマークの現在レート: {yaneuraou_elo:.1f})")
 
         export_population(list(all_individuals.values()), matches_log, args.data_dir)
 
@@ -92,6 +96,7 @@ def main():
         save_training_state(args.data_dir, {
             "opponent_think_ms": opponent_think_ms,
             "win_rate_history": win_rate_history,
+            "yaneuraou_elo": yaneuraou_elo,
         })
 
 
