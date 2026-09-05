@@ -31,7 +31,7 @@ def main():
     parser.add_argument("--generations", type=int, default=3)
     parser.add_argument("--population-size", type=int, default=16, help="個体数（固定）")
     parser.add_argument("--swiss-rounds", type=int, default=4, help="スイス方式トーナメントのラウンド数")
-    parser.add_argument("--yaneuraou-games", type=int, default=2, help="首位個体がやねうら王と対局する回数（温度計）")
+    parser.add_argument("--yaneuraou-games", type=int, default=5, help="首位個体がやねうら王と対局する回数（温度計）")
     parser.add_argument("--immigrant-count", type=int, default=2, help="毎世代投入する移民の基本数")
     parser.add_argument("--immigrant-interval", type=int, default=5, help="この世代数おきに移民を1体増やす。0で無効")
     parser.add_argument("--individual-think-ms", type=int, default=300)
