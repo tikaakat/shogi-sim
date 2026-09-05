@@ -4,6 +4,7 @@ import random
 from shogi_sim.individual import Individual
 from shogi_sim.evolution import run_generation
 from shogi_sim.io_utils import load_checkpoint, export_population, load_training_state, save_training_state
+from shogi_sim.family_names import assign_initial_family_names
 
 # ベンチマーク相手（やねうら王）の思考時間を自動で引き上げるための設定
 # ※Eloには影響しない「温度計」としての難易度調整
@@ -50,8 +51,9 @@ def main():
         all_individuals = {}
         matches_log = []
         population = []
+        family_names = assign_initial_family_names(args.population_size)
         for i in range(args.population_size):
-            ind = Individual(ind_id=f"G0-{i:03d}", generation=0)
+            ind = Individual(ind_id=f"G0-{i:03d}", generation=0, family_label=family_names[i])
             population.append(ind)
             all_individuals[ind.id] = ind
         start_gen = 0
