@@ -8,7 +8,6 @@ from .play import play_vs_yaneuraou, play_individual_vs_individual
 
 MUTATION_RATE = 0.15
 MUTATION_STRENGTH = 0.2
-YANEURAOU_FIXED_ELO = 2200.0  # ベンチマーク相手の目安Elo（think_time調整である程度動く）
 
 
 def crossover(parent_a, parent_b, new_id, generation):
@@ -53,8 +52,10 @@ def manual_breed(population_by_id, parent_a_id, parent_b_id, generation):
 
 def run_generation(population, generation, matches_log, engine_path, eval_dir=None,
                     games_vs_yaneuraou=1, games_vs_peers=2,
-                    individual_think_ms=300, opponent_think_ms=80, multipv=5):
+                    individual_think_ms=300, opponent_think_ms=80, multipv=5,
+                    yaneuraou_elo=2200.0):
     # 1. vs やねうら王（ベンチマーク）
+    # ベンチマーク側のレートも通常のEloと同様に更新する（固定だとインフレの原因になるため）
     for ind in population:
         for _ in range(games_vs_yaneuraou):
             outcome, kifu, color = play_vs_yaneuraou(
@@ -63,7 +64,7 @@ def run_generation(population, generation, matches_log, engine_path, eval_dir=No
                 opponent_think_ms=opponent_think_ms,
                 multipv=multipv,
             )
-            ind.elo, _ = update_elo(ind.elo, YANEURAOU_FIXED_ELO, outcome)
+            ind.elo, yaneuraou_elo = update_elo(ind.elo, yaneuraou_elo, outcome)
             ind.match_history.append({"opponent": "yaneuraou", "result": outcome, "generation": generation, "color": color})
             matches_log.append({
                 "individual_a_id": ind.id, "opponent_type": "yaneuraou",
@@ -96,4 +97,4 @@ def run_generation(population, generation, matches_log, engine_path, eval_dir=No
     # 4. 世代交代：Elo上位 + 多様性維持
     survivors = select_survivors(population, elo_slots=min(3, len(population)), diversity_slots=min(2, len(population)))
 
-    return survivors + children
+    return survivors + children, yaneuraou_elo
