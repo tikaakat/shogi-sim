@@ -33,14 +33,42 @@ def crossover(parent_a, parent_b, new_id, generation):
     return child
 
 
+def is_related(ind_a, ind_b):
+    """兄弟（親を共有）または親子関係にある場合 True を返す（近親交配の回避用）"""
+    ids_a = {ind_a.parent_a_id, ind_a.parent_b_id} - {None}
+    ids_b = {ind_b.parent_a_id, ind_b.parent_b_id} - {None}
+    if ind_a.id in ids_b or ind_b.id in ids_a:
+        return True  # 親子関係
+    if ids_a & ids_b:
+        return True  # 兄弟（共通の親を持つ）
+    return False
+
+
+def pick_unrelated_pair(candidates, max_attempts=10):
+    """近親関係にないペアをできるだけ選ぶ。見つからなければ諦めて許容する"""
+    if len(candidates) < 2:
+        return random.sample(candidates, min(2, len(candidates)))
+    for _ in range(max_attempts):
+        pair = random.sample(candidates, 2)
+        if not is_related(pair[0], pair[1]):
+            return pair
+    return pair  # 見つからなかった場合はそのまま許容（個体数が少ない初期はやむを得ない）
+
+
 def auto_breed(population, generation, num_children=1, top_n=3):
     ranked = sorted(population, key=lambda ind: ind.elo, reverse=True)[:top_n]
     children = []
     for i in range(num_children):
-        parent_a, parent_b = random.sample(ranked, 2)
+        parent_a, parent_b = pick_unrelated_pair(ranked)
         new_id = f"G{generation}-{format(random.randint(0, 46655), 'x').upper()}"
         children.append(crossover(parent_a, parent_b, new_id, generation))
     return children
+
+
+def generate_immigrant(generation):
+    """血統と無関係な完全ランダムの新規個体（遺伝的多様性の補充）"""
+    new_id = f"G{generation}-{format(random.randint(0, 46655), 'x').upper()}i"
+    return Individual(ind_id=new_id, generation=generation)
 
 
 def manual_breed(population_by_id, parent_a_id, parent_b_id, generation):
@@ -53,7 +81,7 @@ def manual_breed(population_by_id, parent_a_id, parent_b_id, generation):
 def run_generation(population, generation, matches_log, engine_path, eval_dir=None,
                     games_vs_yaneuraou=1, games_vs_peers=2,
                     individual_think_ms=300, opponent_think_ms=80, multipv=5,
-                    yaneuraou_elo=2200.0):
+                    yaneuraou_elo=2200.0, immigrant_interval=5):
     # 1. vs やねうら王（ベンチマーク）
     # ベンチマーク側のレートも通常のEloと同様に更新する（固定だとインフレの原因になるため）
     for ind in population:
@@ -91,8 +119,14 @@ def run_generation(population, generation, matches_log, engine_path, eval_dir=No
             "individual_a_color": "sente",
         })
 
-    # 3. 交配（上位2〜3系統ベース）
+    # 3. 交配（上位2〜3系統ベース、近親交配は極力回避）
     children = auto_breed(population, generation + 1, num_children=1, top_n=min(3, len(population)))
+
+    # 定期的に血統と無関係な個体（移民）を1体投入し、遺伝的多様性を補充する
+    if immigrant_interval and generation > 0 and generation % immigrant_interval == 0:
+        immigrant = generate_immigrant(generation + 1)
+        children.append(immigrant)
+        print(f"  → 移民個体 {immigrant.id} を投入しました（多様性補充）")
 
     # 4. 世代交代：Elo上位 + 多様性維持
     survivors = select_survivors(population, elo_slots=min(3, len(population)), diversity_slots=min(2, len(population)))
