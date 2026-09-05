@@ -45,6 +45,7 @@ def main():
 
     opponent_think_ms = training_state.get("opponent_think_ms") or args.opponent_think_ms
     win_rate_history = training_state.get("win_rate_history", [])
+    active_population_ids = training_state.get("active_population_ids")
 
     if all_individuals is None:
         random.seed()
@@ -58,9 +59,18 @@ def main():
             all_individuals[ind.id] = ind
         start_gen = 0
     else:
-        ranked = sorted(all_individuals.values(), key=lambda ind: ind.elo, reverse=True)
-        population = ranked[:args.population_size]
         start_gen = max(ind.generation for ind in all_individuals.values()) + 1
+        if active_population_ids:
+            # 前回終了時点の「現役メンバー」をそのまま引き継ぐ（淘汰された個体は復活させない）
+            population = [all_individuals[i] for i in active_population_ids if i in all_individuals]
+            missing = len(active_population_ids) - len(population)
+            if missing > 0:
+                print(f"  ※ 前回の現役個体のうち{missing}体が見つかりませんでした（データ不整合の可能性）")
+        else:
+            # training_state に現役リストが無い場合のみ、やむを得ずElo上位から復元する
+            print("  ※ 現役個体リストが見つからないため、Elo上位から復元します（淘汰済み個体が混じる可能性があります）")
+            ranked = sorted(all_individuals.values(), key=lambda ind: ind.elo, reverse=True)
+            population = ranked[:args.population_size]
 
     for gen in range(start_gen, start_gen + args.generations):
         print(f"=== Generation {gen} (opponent_think_ms={opponent_think_ms}, population={len(population)}) ===")
@@ -101,6 +111,7 @@ def main():
         save_training_state(args.data_dir, {
             "opponent_think_ms": opponent_think_ms,
             "win_rate_history": win_rate_history,
+            "active_population_ids": [ind.id for ind in population],
         })
 
 
