@@ -10,7 +10,12 @@
       "generation": 2,
       "win_rate": 0.5,
       "opponent_think_ms": 130
+    },
+    {
+      "generation": 4,
+      "win_rate": 0.633,
+      "opponent_think_ms": 130
     }
   ],
-  "yaneuraou_elo": 1868.7004246808342
+  "yaneuraou_elo": 1689.1108972713303
 }
