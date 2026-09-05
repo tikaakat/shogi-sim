@@ -34,12 +34,14 @@ def export_population(all_individuals, matches_log, data_dir):
 
 
 def load_training_state(data_dir):
-    """ベンチマーク相手（やねうら王）の思考時間など、学習の進行状態を読み込む"""
+    """ベンチマーク相手（やねうら王）の思考時間、現役個体IDなど、学習の進行状態を読み込む"""
     path = os.path.join(data_dir, "training_state.json")
     if not os.path.exists(path):
-        return {"opponent_think_ms": None, "win_rate_history": []}
+        return {"opponent_think_ms": None, "win_rate_history": [], "active_population_ids": None}
     with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+        state = json.load(f)
+        state.setdefault("active_population_ids", None)
+        return state
 
 
 def save_training_state(data_dir, state):
