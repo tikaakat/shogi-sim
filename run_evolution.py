@@ -35,6 +35,8 @@ def main():
                          help="ベンチマーク相手の初期思考時間。2回目以降は training_state.json に保存された値が優先される")
     parser.add_argument("--multipv", type=int, default=5)
     parser.add_argument("--init-population", type=int, default=3)
+    parser.add_argument("--immigrant-interval", type=int, default=5,
+                         help="何世代おきに血統と無関係な個体（移民）を1体投入するか。0で無効")
     args = parser.parse_args()
 
     all_individuals, matches_log = load_checkpoint(args.data_dir)
@@ -72,6 +74,7 @@ def main():
             opponent_think_ms=opponent_think_ms,
             multipv=args.multipv,
             yaneuraou_elo=yaneuraou_elo,
+            immigrant_interval=args.immigrant_interval,
         )
         for ind in population:
             all_individuals[ind.id] = ind
