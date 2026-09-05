@@ -104,11 +104,12 @@ def run_swiss_tournament(population, generation, matches_log, engine_path, eval_
     score = {ind.id: 0.0 for ind in population}
     played_pairs = set()
 
-    for _ in range(rounds):
+    for rnd_idx in range(rounds):
         ranked_ids = sorted(by_id.keys(), key=lambda i: (-score[i], -by_id[i].elo))
         pairs = swiss_pairing(ranked_ids, played_pairs)
+        print(f"  --- スイス方式 ラウンド{rnd_idx + 1}/{rounds}（{len(pairs)}局）---")
 
-        for (a_id, b_id) in pairs:
+        for pair_idx, (a_id, b_id) in enumerate(pairs):
             played_pairs.add(frozenset((a_id, b_id)))
             ind_a, ind_b = by_id[a_id], by_id[b_id]
 
@@ -125,6 +126,8 @@ def run_swiss_tournament(population, generation, matches_log, engine_path, eval_
             else:
                 score[a_id] += 0.5
                 score[b_id] += 0.5
+
+            print(f"    局{pair_idx + 1}/{len(pairs)}: {a_id} vs {b_id} → {outcome_a}（{len(kifu)}手）")
 
             outcome_b = {"win": "loss", "loss": "win", "draw": "draw"}[outcome_a]
             ind_a.match_history.append({"opponent": b_id, "result": outcome_a, "generation": generation})
