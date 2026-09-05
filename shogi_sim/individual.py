@@ -8,7 +8,7 @@ BASE_PIECE_VALUES = {
 
 
 class Individual:
-    def __init__(self, ind_id, generation, parent_a_id=None, parent_b_id=None, params=None):
+    def __init__(self, ind_id, generation, parent_a_id=None, parent_b_id=None, params=None, family_label=None):
         self.id = ind_id
         self.generation = generation
         self.parent_a_id = parent_a_id
@@ -16,6 +16,9 @@ class Individual:
         self.params = params or self._random_params()
         self.elo = 1500.0
         self.match_history = []
+        # 血統ラベル：初期個体・移民は自分自身のIDが家名になる。
+        # 交配で生まれた子は、交配時に明示的に指定される（主親の家名を継ぐ）。
+        self.family_label = family_label or ind_id
 
     def _random_params(self):
         piece_values = {k: v * random.uniform(0.85, 1.15) for k, v in BASE_PIECE_VALUES.items()}
@@ -35,11 +38,15 @@ class Individual:
             "params": self.params,
             "elo": self.elo,
             "match_history": self.match_history,
+            "family_label": self.family_label,
         }
 
     @staticmethod
     def from_dict(d):
-        ind = Individual(d["id"], d["generation"], d.get("parent_a_id"), d.get("parent_b_id"), d["params"])
+        ind = Individual(
+            d["id"], d["generation"], d.get("parent_a_id"), d.get("parent_b_id"),
+            d["params"], family_label=d.get("family_label"),
+        )
         ind.elo = d.get("elo", 1500.0)
         ind.match_history = d.get("match_history", [])
         return ind
