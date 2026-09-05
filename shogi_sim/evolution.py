@@ -5,6 +5,7 @@ import time
 from .individual import Individual, BASE_PIECE_VALUES
 from .elo import update_elo
 from .play import play_vs_yaneuraou, play_individual_vs_individual
+from .family_names import random_immigrant_family_name
 
 MUTATION_RATE = 0.15
 MUTATION_STRENGTH = 0.2
@@ -59,9 +60,9 @@ def breed_pair_both_directions(ind_x, ind_y, generation):
 
 
 def generate_immigrant(generation):
-    """血統と無関係な完全ランダムの新規個体（多様性の補充）"""
+    """血統と無関係な完全ランダムの新規個体（多様性の補充）。新しい家名の開祖になる"""
     new_id = f"G{generation}-{format(random.randint(0, 46655), 'x').upper()}i"
-    return Individual(ind_id=new_id, generation=generation)
+    return Individual(ind_id=new_id, generation=generation, family_label=random_immigrant_family_name())
 
 
 def manual_breed(population_by_id, parent_a_id, parent_b_id, generation):
