@@ -1,5 +1,5 @@
 {
-  "opponent_think_ms": 130,
+  "opponent_think_ms": 180,
   "win_rate_history": [
     {
       "generation": 34,
@@ -14,6 +14,11 @@
     {
       "generation": 38,
       "win_rate": 0.6,
+      "opponent_think_ms": 130
+    },
+    {
+      "generation": 40,
+      "win_rate": 1.0,
       "opponent_think_ms": 130
     }
   ]
