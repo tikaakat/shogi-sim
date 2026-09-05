@@ -63,7 +63,7 @@ jobs:
               --games-vs-yaneuraou ${{ github.event.inputs.games_vs_yaneuraou }} \
               --games-vs-peers ${{ github.event.inputs.games_vs_peers }}
 
-            git add data/individuals.json data/matches.json
+            git add data/individuals.json data/matches.json data/training_state.json
             if ! git diff --staged --quiet; then
               git commit -m "Evolve: generation batch $i/$TOTAL [skip ci]"
               git pull --rebase origin main
@@ -78,7 +78,7 @@ jobs:
           username: ${{ secrets.XSERVER_USER }}
           key: ${{ secrets.XSERVER_SSH_KEY }}
           port: ${{ secrets.XSERVER_SSH_PORT }}
-          source: "data/individuals.json,data/matches.json"
+          source: "data/individuals.json,data/matches.json,data/training_state.json"
           target: ${{ secrets.XSERVER_TARGET_DIR }}
           strip_components: 1
 
