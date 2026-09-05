@@ -57,17 +57,18 @@ def run_generation(population, generation, matches_log, engine_path, eval_dir=No
     # 1. vs やねうら王（ベンチマーク）
     for ind in population:
         for _ in range(games_vs_yaneuraou):
-            outcome, kifu = play_vs_yaneuraou(
+            outcome, kifu, color = play_vs_yaneuraou(
                 ind, engine_path, eval_dir,
                 individual_think_ms=individual_think_ms,
                 opponent_think_ms=opponent_think_ms,
                 multipv=multipv,
             )
             ind.elo, _ = update_elo(ind.elo, YANEURAOU_FIXED_ELO, outcome)
-            ind.match_history.append({"opponent": "yaneuraou", "result": outcome, "generation": generation})
+            ind.match_history.append({"opponent": "yaneuraou", "result": outcome, "generation": generation, "color": color})
             matches_log.append({
                 "individual_a_id": ind.id, "opponent_type": "yaneuraou",
                 "result": outcome, "kifu": kifu, "generation": generation,
+                "individual_a_color": color,
             })
 
     # 2. 個体同士
@@ -86,6 +87,7 @@ def run_generation(population, generation, matches_log, engine_path, eval_dir=No
         matches_log.append({
             "individual_a_id": ind_a.id, "individual_b_id": ind_b.id, "opponent_type": "individual",
             "result": outcome_a, "kifu": kifu, "generation": generation,
+            "individual_a_color": "sente",
         })
 
     # 3. 交配（上位2〜3系統ベース）
