@@ -50,23 +50,16 @@ jobs:
       - name: Build YaneuraOu (MATERIAL edition)
         run: bash scripts/build_yaneuraou.sh /tmp/YaneuraOu
 
-      - name: Run evolution generation-by-generation (with per-batch deploy)
+      # ※Xserverへの送信（scp/curl）は廃止した。
+      #   XserverがGitHub ActionsのIPからの着信をブロックすることがあったため、
+      #   Xserver側のcronがGitHubへ「取りに行く」プル方式に変更している。
+      #   このワークフローはGitHubへのコミットまでで完結する。
+      - name: Run evolution generation-by-generation
         timeout-minutes: 340
-        env:
-          XSERVER_HOST: ${{ secrets.XSERVER_HOST }}
-          XSERVER_USER: ${{ secrets.XSERVER_USER }}
-          XSERVER_PORT: ${{ secrets.XSERVER_SSH_PORT }}
-          XSERVER_TARGET_DIR: ${{ secrets.XSERVER_TARGET_DIR }}
-          XSERVER_SSH_KEY: ${{ secrets.XSERVER_SSH_KEY }}
-          IMPORT_URL: "https://lab.spia-net.com/shogi2/import_from_colab.php?key=${{ secrets.IMPORT_SECRET_KEY }}"
         run: |
           git config user.name "shogi-sim-bot"
           git config user.email "actions@users.noreply.github.com"
 
-          echo "$XSERVER_SSH_KEY" > /tmp/deploy_key
-          chmod 600 /tmp/deploy_key
-
-          # workflow_dispatch の入力が無い場合（schedule起動時）はデフォルト値を使う
           TOTAL="${{ github.event.inputs.generations || '3' }}"
           POP_SIZE="${{ github.event.inputs.population_size || '16' }}"
           SWISS_ROUNDS="${{ github.event.inputs.swiss_rounds || '4' }}"
@@ -86,15 +79,4 @@ jobs:
               git pull --rebase origin main
               git push
             fi
-
-            echo "--- Xserverへ反映中（バッチ $i）---"
-            scp -i /tmp/deploy_key -P "$XSERVER_PORT" -o StrictHostKeyChecking=no \
-              data/individuals.json data/matches.json data/training_state.json \
-              "$XSERVER_USER@$XSERVER_HOST:$XSERVER_TARGET_DIR" \
-              || echo "::warning::scpでの転送に失敗しました（バッチ $i）。次のバッチへ続行します"
-
-            curl -sS -f "$IMPORT_URL" \
-              || echo "::warning::インポートに失敗しました（バッチ $i）。次のバッチへ続行します"
           done
-
-          rm -f /tmp/deploy_key
