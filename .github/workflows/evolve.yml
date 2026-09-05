@@ -11,14 +11,17 @@ on:
         description: "何世代分進めるか"
         required: false
         default: "3"
-      games_vs_yaneuraou:
-        description: "1世代あたり、個体ごとのやねうら王との対局数"
+      population_size:
+        description: "個体数（固定）"
         required: false
-        default: "1"
-      games_vs_peers:
-        description: "1世代あたりの個体同士の対局数"
+        default: "16"
+      swiss_rounds:
+        description: "スイス方式トーナメントのラウンド数"
         required: false
-        default: "2"
+        default: "4"
+  schedule:
+    # 毎日 UTC 20:00（日本時間 翌5:00）に自動実行。手動実行（workflow_dispatch）とも共存する
+    - cron: "0 20 * * *"
 
 jobs:
   evolve:
@@ -63,15 +66,19 @@ jobs:
           echo "$XSERVER_SSH_KEY" > /tmp/deploy_key
           chmod 600 /tmp/deploy_key
 
-          TOTAL=${{ github.event.inputs.generations }}
+          # workflow_dispatch の入力が無い場合（schedule起動時）はデフォルト値を使う
+          TOTAL="${{ github.event.inputs.generations || '3' }}"
+          POP_SIZE="${{ github.event.inputs.population_size || '16' }}"
+          SWISS_ROUNDS="${{ github.event.inputs.swiss_rounds || '4' }}"
+
           for i in $(seq 1 "$TOTAL"); do
             echo "=== Running generation batch $i / $TOTAL ==="
             python -u run_evolution.py \
               --engine-path /tmp/YaneuraOu/source/YaneuraOu-by-gcc \
               --data-dir data \
               --generations 1 \
-              --games-vs-yaneuraou ${{ github.event.inputs.games_vs_yaneuraou }} \
-              --games-vs-peers ${{ github.event.inputs.games_vs_peers }}
+              --population-size "$POP_SIZE" \
+              --swiss-rounds "$SWISS_ROUNDS"
 
             git add data/individuals.json data/matches.json data/training_state.json
             if ! git diff --staged --quiet; then
