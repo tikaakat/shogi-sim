@@ -25,6 +25,11 @@
       "generation": 42,
       "win_rate": 0.6,
       "opponent_think_ms": 180
+    },
+    {
+      "generation": 44,
+      "win_rate": 0.4,
+      "opponent_think_ms": 180
     }
   ]
 }
