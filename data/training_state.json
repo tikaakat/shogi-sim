@@ -170,24 +170,29 @@
       "generation": 66,
       "win_rate": 0.8,
       "opponent_think_ms": 230
+    },
+    {
+      "generation": 68,
+      "win_rate": 0.4,
+      "opponent_think_ms": 280
     }
   ],
   "active_population_ids": [
-    "G63-1AC5",
-    "G61-3121",
     "G65-4970",
-    "G61-8D6",
+    "G63-1AC5",
     "G65-3D9A",
-    "G63-B215",
-    "G65-2BCF",
     "G65-658E",
     "G67-573Bi",
-    "G67-79A6i",
-    "G67-587",
-    "G67-4BC4",
     "G67-3B19",
-    "G67-3E2D",
     "G67-A058",
-    "G67-3F3E"
+    "G67-3F3E",
+    "G69-4F03i",
+    "G69-451Fi",
+    "G69-2960",
+    "G69-4107",
+    "G69-6C8E",
+    "G69-7792",
+    "G69-1DF3",
+    "G69-2F26"
   ]
 }
