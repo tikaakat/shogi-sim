@@ -205,24 +205,29 @@
       "generation": 80,
       "win_rate": 0.9,
       "opponent_think_ms": 230
+    },
+    {
+      "generation": 82,
+      "win_rate": 0.6,
+      "opponent_think_ms": 280
     }
   ],
   "active_population_ids": [
-    "G71-8D90",
+    "G81-476D",
     "G79-B10E",
-    "G75-62FA",
-    "G73-812Di",
-    "G79-7D2Ei",
-    "G79-68CC",
-    "G79-3472",
-    "G79-234B",
+    "G81-357A",
+    "G81-3B00",
     "G81-8267i",
-    "G81-11A9i",
     "G81-A638i",
     "G81-AD16",
-    "G81-357A",
-    "G81-A6A9",
-    "G81-476D",
-    "G81-3B00"
+    "G79-234B",
+    "G83-55D9i",
+    "G83-5999i",
+    "G83-93B6",
+    "G83-8AEB",
+    "G83-857D",
+    "G83-7A61",
+    "G83-1A16",
+    "G83-20D5"
   ]
 }
