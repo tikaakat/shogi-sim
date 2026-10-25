@@ -1,5 +1,5 @@
 {
-  "opponent_think_ms": 230,
+  "opponent_think_ms": 180,
   "win_rate_history": [
     {
       "generation": 0,
@@ -780,24 +780,29 @@
       "generation": 310,
       "win_rate": 0.6,
       "opponent_think_ms": 230
+    },
+    {
+      "generation": 312,
+      "win_rate": 0.2,
+      "opponent_think_ms": 230
     }
   ],
   "active_population_ids": [
     "G309-714Ai",
-    "G309-3BD5",
-    "G307-3D1A",
-    "G299-20B",
-    "G303-7C3i",
-    "G303-A6FB",
-    "G309-4958",
-    "G309-68E2",
-    "G311-558i",
-    "G311-509Fi",
-    "G311-3F3Fi",
+    "G311-B294",
     "G311-534E",
-    "G311-729C",
-    "G311-5FF1",
+    "G303-A6FB",
+    "G309-68E2",
+    "G307-3D1A",
     "G311-793C",
-    "G311-B294"
+    "G311-729C",
+    "G313-97B6i",
+    "G313-A88Ci",
+    "G313-B87",
+    "G313-14FB",
+    "G313-AA3C",
+    "G313-29CC",
+    "G313-6D93",
+    "G313-3B49"
   ]
 }
