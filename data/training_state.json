@@ -885,24 +885,29 @@
       "generation": 352,
       "win_rate": 0.2,
       "opponent_think_ms": 230
+    },
+    {
+      "generation": 354,
+      "win_rate": 0.6,
+      "opponent_think_ms": 180
     }
   ],
   "active_population_ids": [
-    "G351-3B0F",
-    "G349-8BD5i",
-    "G351-684A",
-    "G351-8B6Bi",
-    "G349-AC5",
     "G351-7311",
-    "G349-BC4",
+    "G351-3B0F",
+    "G353-5C3E",
     "G351-74D5",
     "G353-4ADBi",
-    "G353-17F8i",
     "G353-3764",
     "G353-1D9F",
-    "G353-8FB",
-    "G353-2F22",
-    "G353-7308",
-    "G353-5C3E"
+    "G349-BC4",
+    "G355-8F7Ei",
+    "G355-143Ai",
+    "G355-1CF7",
+    "G355-8FBA",
+    "G355-2876",
+    "G355-5181",
+    "G355-BA4",
+    "G355-9C9A"
   ]
 }
