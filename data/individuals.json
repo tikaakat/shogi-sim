@@ -113667,7 +113667,7 @@
       "king_safety_weight": 6.646072106707837,
       "aggression_weight": -2.482707173979253
     },
-    "elo": 7413.360484608317,
+    "elo": 7381.644401727962,
     "match_history": [
       {
         "opponent": "G377-510B",
@@ -113788,6 +113788,26 @@
         "opponent": "G387-D9C",
         "result": "win",
         "generation": 388
+      },
+      {
+        "opponent": "G389-ACB6",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-2F35",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-6812",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-8811",
+        "result": "loss",
+        "generation": 390
       }
     ],
     "family_label": "B"
@@ -115349,7 +115369,7 @@
       "king_safety_weight": 6.646072106707837,
       "aggression_weight": -2.482707173979253
     },
-    "elo": 7395.320495835483,
+    "elo": 7363.390773373772,
     "match_history": [
       {
         "opponent": "G379-86D8",
@@ -115410,6 +115430,26 @@
         "opponent": "G387-3D4D",
         "result": "loss",
         "generation": 388
+      },
+      {
+        "opponent": "G387-3A3A",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-211",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-6128i",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G385-4E85i",
+        "result": "win",
+        "generation": 390
       }
     ],
     "family_label": "B"
@@ -115735,7 +115775,7 @@
       "king_safety_weight": 6.2463466826549086,
       "aggression_weight": -2.830050067261923
     },
-    "elo": 1636.256754474885,
+    "elo": 1627.3181418332888,
     "match_history": [
       {
         "opponent": "G385-4648i",
@@ -115776,6 +115816,26 @@
         "opponent": "G387-5005",
         "result": "win",
         "generation": 388
+      },
+      {
+        "opponent": "G387-360Bi",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-1F4i",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-B522",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G383-A218",
+        "result": "loss",
+        "generation": 390
       }
     ],
     "family_label": "Zt"
@@ -116253,7 +116313,7 @@
       "king_safety_weight": 8.526899091113515,
       "aggression_weight": 1.6122153492021942
     },
-    "elo": 1568.311786721674,
+    "elo": 1547.8079555403447,
     "match_history": [
       {
         "opponent": "G387-4318i",
@@ -116274,6 +116334,26 @@
         "opponent": "G385-131C",
         "result": "win",
         "generation": 388
+      },
+      {
+        "opponent": "G385-4E85i",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-6128i",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-2F35",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-6128i",
+        "result": "loss",
+        "generation": 390
       }
     ],
     "family_label": "Ny"
@@ -116406,7 +116486,7 @@
       "king_safety_weight": 6.697626014397254,
       "aggression_weight": -2.482707173979253
     },
-    "elo": 7414.194727108294,
+    "elo": 7478.468856114986,
     "match_history": [
       {
         "opponent": "G377-929C",
@@ -116427,6 +116507,56 @@
         "opponent": "G383-A218",
         "result": "win",
         "generation": 388
+      },
+      {
+        "opponent": "G389-8811",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-2CBC",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-ACB6",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-B4F2",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "yaneuraou",
+        "result": "loss",
+        "generation": 390,
+        "color": "sente"
+      },
+      {
+        "opponent": "yaneuraou",
+        "result": "loss",
+        "generation": 390,
+        "color": "gote"
+      },
+      {
+        "opponent": "yaneuraou",
+        "result": "loss",
+        "generation": 390,
+        "color": "sente"
+      },
+      {
+        "opponent": "yaneuraou",
+        "result": "loss",
+        "generation": 390,
+        "color": "gote"
+      },
+      {
+        "opponent": "yaneuraou",
+        "result": "win",
+        "generation": 390,
+        "color": "gote"
       }
     ],
     "family_label": "B"
@@ -116457,7 +116587,7 @@
       "king_safety_weight": 6.646072106707837,
       "aggression_weight": -2.482707173979253
     },
-    "elo": 7457.788336718045,
+    "elo": 7423.791246118794,
     "match_history": [
       {
         "opponent": "G385-3AE2",
@@ -116508,6 +116638,26 @@
         "result": "win",
         "generation": 388,
         "color": "sente"
+      },
+      {
+        "opponent": "G389-2CBC",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-8811",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G385-4E85i",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-1F4i",
+        "result": "win",
+        "generation": 390
       }
     ],
     "family_label": "B"
@@ -116538,7 +116688,7 @@
       "king_safety_weight": 6.646072106707837,
       "aggression_weight": -2.482707173979253
     },
-    "elo": 7397.453302481656,
+    "elo": 7397.987584735426,
     "match_history": [
       {
         "opponent": "G387-D9C",
@@ -116559,6 +116709,26 @@
         "opponent": "G387-B522",
         "result": "loss",
         "generation": 388
+      },
+      {
+        "opponent": "G389-B4F2",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G383-A218",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-3A3A",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-ACB6",
+        "result": "loss",
+        "generation": 390
       }
     ],
     "family_label": "B"
@@ -116589,7 +116759,7 @@
       "king_safety_weight": 6.646072106707837,
       "aggression_weight": -2.482707173979253
     },
-    "elo": 7394.684484364246,
+    "elo": 7363.103083634344,
     "match_history": [
       {
         "opponent": "G385-131C",
@@ -116610,6 +116780,26 @@
         "opponent": "G385-20D",
         "result": "win",
         "generation": 388
+      },
+      {
+        "opponent": "G383-A218",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-B4F2",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-211",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-2F35",
+        "result": "loss",
+        "generation": 390
       }
     ],
     "family_label": "B"
@@ -116691,8 +116881,29 @@
       "king_safety_weight": 12.145412032984273,
       "aggression_weight": 4.058725834128035
     },
-    "elo": 1500.0,
-    "match_history": [],
+    "elo": 1537.8489188449926,
+    "match_history": [
+      {
+        "opponent": "G389-6128i",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G385-4E85i",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-B4F2",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-B522",
+        "result": "loss",
+        "generation": 390
+      }
+    ],
     "family_label": "Uc"
   },
   {
@@ -116721,8 +116932,29 @@
       "king_safety_weight": 13.240294935898891,
       "aggression_weight": 4.173739670474729
     },
-    "elo": 1500.0,
-    "match_history": [],
+    "elo": 1491.5935249779327,
+    "match_history": [
+      {
+        "opponent": "G389-1F4i",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-360Bi",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G383-A218",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-360Bi",
+        "result": "win",
+        "generation": 390
+      }
+    ],
     "family_label": "Lm"
   },
   {
@@ -116751,8 +116983,29 @@
       "king_safety_weight": 6.646072106707837,
       "aggression_weight": -2.482707173979253
     },
-    "elo": 7414.194727108294,
-    "match_history": [],
+    "elo": 7417.7969638291925,
+    "match_history": [
+      {
+        "opponent": "G387-3D4D",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-B522",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-2CBC",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G377-929C",
+        "result": "win",
+        "generation": 390
+      }
+    ],
     "family_label": "B"
   },
   {
@@ -116781,8 +117034,29 @@
       "king_safety_weight": 6.697626014397254,
       "aggression_weight": -2.482707173979253
     },
-    "elo": 7413.360484608317,
-    "match_history": [],
+    "elo": 7444.7779064104,
+    "match_history": [
+      {
+        "opponent": "G377-929C",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-6812",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-3D4D",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-211",
+        "result": "win",
+        "generation": 390
+      }
+    ],
     "family_label": "B"
   },
   {
@@ -116811,8 +117085,29 @@
       "king_safety_weight": 6.646072106707837,
       "aggression_weight": -2.482707173979253
     },
-    "elo": 7414.194727108294,
-    "match_history": [],
+    "elo": 7398.008919303563,
+    "match_history": [
+      {
+        "opponent": "G389-6812",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G377-929C",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-360Bi",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-3A3A",
+        "result": "win",
+        "generation": 390
+      }
+    ],
     "family_label": "B"
   },
   {
@@ -116841,8 +117136,29 @@
       "king_safety_weight": 6.463995881889633,
       "aggression_weight": -2.120409374562534
     },
-    "elo": 7397.453302481656,
-    "match_history": [],
+    "elo": 7414.921491014703,
+    "match_history": [
+      {
+        "opponent": "G387-211",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-3A3A",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-1F4i",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-3D4D",
+        "result": "loss",
+        "generation": 390
+      }
+    ],
     "family_label": "B"
   },
   {
@@ -116871,8 +117187,29 @@
       "king_safety_weight": 6.697626014397254,
       "aggression_weight": -2.482707173979253
     },
-    "elo": 7457.788336718045,
-    "match_history": [],
+    "elo": 7484.148141771362,
+    "match_history": [
+      {
+        "opponent": "G387-B522",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G387-3D4D",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-8811",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-6812",
+        "result": "win",
+        "generation": 390
+      }
+    ],
     "family_label": "B"
   },
   {
@@ -116901,7 +117238,268 @@
       "king_safety_weight": 6.646072106707837,
       "aggression_weight": -2.482707173979253
     },
-    "elo": 7414.194727108294,
+    "elo": 7415.948768214433,
+    "match_history": [
+      {
+        "opponent": "G389-2F35",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-ACB6",
+        "result": "loss",
+        "generation": 390
+      },
+      {
+        "opponent": "G377-929C",
+        "result": "win",
+        "generation": 390
+      },
+      {
+        "opponent": "G389-2CBC",
+        "result": "loss",
+        "generation": 390
+      }
+    ],
+    "family_label": "B"
+  },
+  {
+    "id": "G391-A533i",
+    "generation": 391,
+    "parent_a_id": null,
+    "parent_b_id": null,
+    "params": {
+      "piece_values": {
+        "P": 100.27903179956381,
+        "L": 347.07586482575647,
+        "N": 440.7860378213555,
+        "S": 663.8490760464867,
+        "G": 689.207398988865,
+        "B": 837.1256181827557,
+        "R": 1129.923393119783,
+        "K": 13472.68520365465,
+        "+P": 438.61254975388226,
+        "+L": 526.0587720577267,
+        "+N": 581.2404059943699,
+        "+S": 722.0691121624394,
+        "+B": 1284.5324248631007,
+        "+R": 1149.7401756954214
+      },
+      "mobility_weight": 6.683027441577011,
+      "king_safety_weight": 17.237760360797783,
+      "aggression_weight": -2.306092982744424
+    },
+    "elo": 1500.0,
+    "match_history": [],
+    "family_label": "Fx"
+  },
+  {
+    "id": "G391-2CE1i",
+    "generation": 391,
+    "parent_a_id": null,
+    "parent_b_id": null,
+    "params": {
+      "piece_values": {
+        "P": 89.72365714427559,
+        "L": 440.80659212589575,
+        "N": 385.08651647417963,
+        "S": 511.8966928875474,
+        "G": 740.4939566118052,
+        "B": 870.4026688585337,
+        "R": 1127.2488791136873,
+        "K": 13413.063784945474,
+        "+P": 510.58214555952475,
+        "+L": 589.7096220564717,
+        "+N": 697.109282019426,
+        "+S": 639.344870005127,
+        "+B": 1125.7437734051043,
+        "+R": 1137.5501414711027
+      },
+      "mobility_weight": 5.633304934275774,
+      "king_safety_weight": 11.537992930670898,
+      "aggression_weight": 1.0277848165590076
+    },
+    "elo": 1500.0,
+    "match_history": [],
+    "family_label": "Pf"
+  },
+  {
+    "id": "G391-7E80i",
+    "generation": 391,
+    "parent_a_id": null,
+    "parent_b_id": null,
+    "params": {
+      "piece_values": {
+        "P": 92.98652041859123,
+        "L": 341.80438165398346,
+        "N": 492.39337930550596,
+        "S": 578.2817762810168,
+        "G": 631.9635947914022,
+        "B": 955.0556979556972,
+        "R": 916.2135420885278,
+        "K": 14083.309530678207,
+        "+P": 450.7921306161818,
+        "+L": 636.0317303646225,
+        "+N": 582.3674271926782,
+        "+S": 673.9060611099014,
+        "+B": 1093.9836892884123,
+        "+R": 1302.5977429041523
+      },
+      "mobility_weight": 3.8030838455723877,
+      "king_safety_weight": 5.430713625273949,
+      "aggression_weight": -3.1950870949161905
+    },
+    "elo": 1500.0,
+    "match_history": [],
+    "family_label": "Dd"
+  },
+  {
+    "id": "G391-9DA4",
+    "generation": 391,
+    "parent_a_id": "G387-3D4D",
+    "parent_b_id": "G387-B522",
+    "params": {
+      "piece_values": {
+        "P": 62.358100828409164,
+        "L": 531.9223057482948,
+        "N": 283.47654600614175,
+        "S": 784.1952854138453,
+        "G": 412.8420354676879,
+        "B": 534.3242310843393,
+        "R": 496.0768959741311,
+        "K": 16332.048077434263,
+        "+P": 1216.8304519849928,
+        "+L": 1227.9619792563076,
+        "+N": 690.4910681269338,
+        "+S": 560.7459667009022,
+        "+B": 1248.8041571500155,
+        "+R": 963.5180831206678
+      },
+      "mobility_weight": 4.9844034157812445,
+      "king_safety_weight": 6.646072106707837,
+      "aggression_weight": -2.482707173979253
+    },
+    "elo": 7478.468856114986,
+    "match_history": [],
+    "family_label": "B"
+  },
+  {
+    "id": "G391-19DD",
+    "generation": 391,
+    "parent_a_id": "G387-B522",
+    "parent_b_id": "G387-3D4D",
+    "params": {
+      "piece_values": {
+        "P": 56.14861656799165,
+        "L": 531.9223057482948,
+        "N": 238.48775786440154,
+        "S": 630.7933423649349,
+        "G": 412.8420354676879,
+        "B": 548.8068776007889,
+        "R": 576.857178024703,
+        "K": 16332.048077434263,
+        "+P": 1217.7410749999422,
+        "+L": 1227.9619792563076,
+        "+N": 655.5144748993623,
+        "+S": 514.2442129772572,
+        "+B": 1205.5076134546766,
+        "+R": 993.6235000673352
+      },
+      "mobility_weight": 5.250347094445083,
+      "king_safety_weight": 6.697626014397254,
+      "aggression_weight": -2.0556969411122563
+    },
+    "elo": 7423.791246118794,
+    "match_history": [],
+    "family_label": "B"
+  },
+  {
+    "id": "G391-45F",
+    "generation": 391,
+    "parent_a_id": "G389-2CBC",
+    "parent_b_id": "G387-3D4D",
+    "params": {
+      "piece_values": {
+        "P": 56.14861656799165,
+        "L": 531.9223057482948,
+        "N": 238.48775786440154,
+        "S": 715.1361391134609,
+        "G": 412.8420354676879,
+        "B": 548.8068776007889,
+        "R": 512.283724003165,
+        "K": 16332.048077434263,
+        "+P": 1217.7410749999422,
+        "+L": 1227.9619792563076,
+        "+N": 690.4910681269338,
+        "+S": 514.2442129772572,
+        "+B": 1162.457127118474,
+        "+R": 993.6235000673352
+      },
+      "mobility_weight": 5.250347094445083,
+      "king_safety_weight": 6.697626014397254,
+      "aggression_weight": -2.482707173979253
+    },
+    "elo": 7484.148141771362,
+    "match_history": [],
+    "family_label": "B"
+  },
+  {
+    "id": "G391-A7E9",
+    "generation": 391,
+    "parent_a_id": "G387-3D4D",
+    "parent_b_id": "G389-2CBC",
+    "params": {
+      "piece_values": {
+        "P": 56.46906042586861,
+        "L": 531.9223057482948,
+        "N": 283.47654600614175,
+        "S": 784.1952854138453,
+        "G": 412.8420354676879,
+        "B": 534.3242310843393,
+        "R": 496.0768959741311,
+        "K": 16332.048077434263,
+        "+P": 1216.8304519849928,
+        "+L": 1227.9619792563076,
+        "+N": 690.4910681269338,
+        "+S": 589.028923364573,
+        "+B": 1248.8041571500155,
+        "+R": 963.5180831206678
+      },
+      "mobility_weight": 5.250347094445083,
+      "king_safety_weight": 6.697626014397254,
+      "aggression_weight": -2.482707173979253
+    },
+    "elo": 7478.468856114986,
+    "match_history": [],
+    "family_label": "B"
+  },
+  {
+    "id": "G391-963",
+    "generation": 391,
+    "parent_a_id": "G389-ACB6",
+    "parent_b_id": "G387-B522",
+    "params": {
+      "piece_values": {
+        "P": 56.14861656799165,
+        "L": 531.9223057482948,
+        "N": 291.88289926285535,
+        "S": 784.1952854138453,
+        "G": 410.6080169461339,
+        "B": 548.8068776007889,
+        "R": 578.8648211245966,
+        "K": 19211.03963318192,
+        "+P": 1216.8304519849928,
+        "+L": 1227.9619792563076,
+        "+N": 690.4910681269338,
+        "+S": 607.8364138511931,
+        "+B": 1248.8041571500155,
+        "+R": 963.5180831206678
+      },
+      "mobility_weight": 5.250347094445083,
+      "king_safety_weight": 6.646072106707837,
+      "aggression_weight": -2.482707173979253
+    },
+    "elo": 7444.7779064104,
     "match_history": [],
     "family_label": "B"
   }
