@@ -1215,24 +1215,29 @@
       "generation": 484,
       "win_rate": 0.6,
       "opponent_think_ms": 230
+    },
+    {
+      "generation": 486,
+      "win_rate": 0.6,
+      "opponent_think_ms": 230
     }
   ],
   "active_population_ids": [
-    "G481-199Ci",
-    "G483-84B4",
-    "G483-2FEC",
     "G483-9A98",
-    "G481-2C2A",
-    "G483-5CAD",
-    "G481-26CC",
-    "G473-73B2",
-    "G485-8B21i",
-    "G485-1423i",
-    "G485-4AC1",
     "G485-B0AD",
-    "G485-A9E7",
     "G485-6B0D",
+    "G483-2FEC",
     "G485-96DD",
-    "G485-78A9"
+    "G483-84B4",
+    "G485-4AC1",
+    "G485-A9E7",
+    "G487-79FEi",
+    "G487-3D27i",
+    "G487-8865",
+    "G487-A86",
+    "G487-5663",
+    "G487-3CF6",
+    "G487-63F6",
+    "G487-AECD"
   ]
 }
